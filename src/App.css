@@ -1,38 +1,96 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
 .App {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.App div {
+  max-width: 800px;
+  margin: 30px auto;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+nav {
+  background-color: gray;
+  display: flex;
+  justify-content: center;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+nav a {
+  padding: 10px 20px;
+  background-color: #fff;
+  color: #333;
+  margin: 15px;
+  text-decoration: none;
+  border-radius: 5px;
+  border: 3px solid #fff;
+  transition: all 0.5s ease;
+}
+
+nav a:hover {
+  border-bottom: 3px solid rgb(255, 247, 0);
+}
+
+.active {
+  border: 3px solid rgb(255, 247, 0);
+}
+
+.post__item {
+  background-color: #fafafa;
+  border: 1px solid #dbdbdb;
+  padding: 20px;
+  border-radius: 5px;
+  text-align: left;
+}
+
+.post__item-title {
+  font-weight: 800;
+  text-transform: uppercase;
+  padding: 10px;
+}
+
+.post__item-text {
+  padding: 10px;
+}
+
+.post__item button {
+  padding: 10px 20px;
+  margin: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  border: 1px solid #ffe2e2;
+  background-color: #ffe2e2;
+}
+
+.post__item button:hover {
+  border: 1px solid red;
+}
+
+form {
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  max-width: 600px;
+  margin: 20px auto;
 }
 
-.App-link {
-  color: #61dafb;
+form input,
+button,
+textarea {
+  margin: 15px 0;
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #333;
+  outline: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+form button {
+  cursor: pointer;
+  background-color: #e0ffd3;
+  border: 1px solid #cde5c2;
+}
+form button:hover {
+  background-color: #cde5c2;
 }
