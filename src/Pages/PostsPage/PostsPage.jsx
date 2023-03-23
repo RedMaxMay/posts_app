@@ -1,9 +1,9 @@
 import React from "react";
-import { usePostsContext } from "../../components/Context/PostsContext";
+import { useSelector } from "react-redux";
 import PostItem from "../../components/PostItem/PostItem";
 
 export default function PostsPage() {
-  const { posts } = usePostsContext();
+  const { posts } = useSelector((state) => state.posts);
 
   return (
     <div>

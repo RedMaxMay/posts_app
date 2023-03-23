@@ -1,14 +1,33 @@
-import React from "react";
-import { usePostsContext } from "../Context/PostsContext";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addPost } from "../../store/postsSlice";
 
 export default function AddPostForm() {
-  const { title, id, text, setTitle, setId, setText, addNewPost } =
-    usePostsContext();
+  const [title, setTitle] = useState("");
+  const [id, setId] = useState("");
+  const [text, setText] = useState("");
+
+  const dispatch = useDispatch();
+
+  const add = (e) => {
+    e.preventDefault();
+    const newPost = {
+      id,
+      title,
+      text,
+    };
+
+    dispatch(addPost(newPost));
+
+    setTitle("");
+    setId("");
+    setText("");
+  };
 
   return (
     <>
       <h1>Create New post here!</h1>
-      <form onSubmit={addNewPost}>
+      <form onSubmit={add}>
         <input
           required
           type="text"
